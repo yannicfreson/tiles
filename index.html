@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EBW</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>EBW</h1>
+    </div>
+    <div class="content">
+      <div id="tile-1" class="tile">
+        <img src="https://www.bnpparibasfortis.be/media/boosted-icons/DesktopTabletSmartphome/DesktopTabletSmartphome.svg" alt="Dagelijks bankieren">
+        <h2 class="tile-title">Dagelijks bankieren</h2>
+      </div>
+
+      <div id="tile-2" class="tile">
+        <img src="https://www.bnpparibasfortis.be/media/boosted-icons/Savings_PiggyBank/BNPPF/Savings_PiggyBank.svg" alt="Sparen en beleggen">
+        <h2 class="tile-title">Sparen en beleggen</h2>
+      </div>
+
+      <div id="tile-3" class="tile">
+        <img src="https://www.bnpparibasfortis.be/public/ebw/media/Illustrations/Dreams_PresentPalmtreeSofaRingInCloud/BNPPF.svg" alt="Lenen">
+        <h2 class="tile-title">Lenen</h2>
+      </div>
+
+      <div id="tile-4" class="tile">
+        <img src="https://www.bnpparibasfortis.be/media/boosted-icons/Insurance_Umbrella/BNPPF/Insurance_Umbrella.svg" alt="Verzekeren">
+        <h2 class="tile-title">Verzekeren</h2>
+      </div>
+
+      <div id="tile-5" class="tile">
+        <img src="https://www.bnpparibasfortis.be/public/ebw/media/Illustrations/Advisor/BNPPF.svg" alt="Iets anders">
+        <h2 class="tile-title">Iets anders</h2>
+      </div>
+    </div>
+
+    <div id="tile-items" class="tile-items">
+      
+    </div>
+  </div>
+</body>
+
+<style>
+  html, body {
+    --c-green: #00965E;
+
+    background-color: #cfacc2;
+
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+  }
+
+  .container {
+    width: 80%;
+    margin: 2rem auto;
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 2rem;
+  }
+
+  .header {
+    text-align: center;
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .tile {
+    background-color: #fff;
+    color: black;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 .25rem .875rem 0 rgba(0,0,0,.1);
+    padding: 0.5rem 1rem;
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .tile-title {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: normal;
+    color: #888;
+  }
+
+  .active {
+    border: 1px solid var(--c-green);
+  }
+
+  .tile-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .item {
+    padding: 1rem 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .item-category {
+    font-weight: bold;
+    font-size: 1rem;
+    color: var(--c-green);
+    margin: 0;
+  }
+
+  .item-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  .item-content {
+    color: #888;
+    margin: 0;
+  }
+
+  .item {
+    width: 100%;
+    background-color: #fff;
+    color: black;
+    border: 1px solid #ddd4c9;
+    border-radius: 4px;
+    width: calc(100% - 3rem);
+  }
+</style>
+
+<script>
+  let tiles = document.querySelectorAll('.tile');
+
+  let tile1Items = [
+    {
+      category: 'Dagelijks bankieren',
+      title: 'Rekeningen',
+      content: 'Bekijk en beheer uw rekeningen'
+    },
+    {
+      category: 'Dagelijks bankieren',
+      title: 'Bankkaarten',
+      content: 'Beheer uw bankkaarten en stel limieten in'
+    },
+    {
+      category: 'Dagelijks bankieren',
+      title: 'Betalen',
+      content: 'Betaal uw facturen en verricht overschrijvingen'
+    }
+  ];
+  let tile2Items = [
+    {
+      category: 'Sparen en beleggen',
+      title: 'Spaarrekeningen',
+      content: 'Open of beheer uw spaarrekeningen'
+    },
+    {
+      category: 'Sparen en beleggen',
+      title: 'Beleggingen',
+      content: 'Bekijk en krijg inzicht in uw beleggingen'
+    },
+  ]
+  let tile3Items = [
+    {
+      category: 'Lenen',
+      title: 'Hypotheken',
+      content: 'Ontvang advies en beheer uw hypothecaire lening'
+    },
+    {
+      category: 'Lenen',
+      title: 'Persoonlijke leningen',
+      content: 'Vraag een persoonlijke lening aan en volg uw afbetalingen'
+    },
+    {
+      category: 'Lenen',
+      title: 'Kredietkaarten',
+      content: 'Beheer uw kredietkaart en stel limieten in'
+    },
+  ];
+  let tile4Items = [
+    {
+      category: 'Verzekeren',
+      title: 'Autoverzekering',
+      content: 'Vergelijk en sluit een autoverzekering af'
+    },
+    {
+      category: 'Verzekeren',
+      title: 'Woonverzekering',
+      content: 'Bescherm uw woning met een uitgebreide verzekering'
+    },
+    {
+      category: 'Verzekeren',
+      title: 'Reisverzekering',
+      content: 'Zorgeloos op reis met een passende reisverzekering'
+    },
+    {
+      category: 'Verzekeren',
+      title: 'Zorgverzekering',
+      content: 'Kies de zorgverzekering die het beste bij u past'
+    },
+    {
+      category: 'Verzekeren',
+      title: 'Levensverzekering',
+      content: 'Beveilig de toekomst van uw gezin met een levensverzekering'
+    }
+  ];
+  let tile5Items = [
+    {
+      category: 'Iets anders',
+      title: 'Klantenservice',
+      content: 'Neem contact op met onze klantenservice voor vragen of hulp'
+    },
+    {
+      category: 'Iets anders',
+      title: 'Financiële planning',
+      content: 'Krijg advies over het plannen van uw financiële toekomst'
+    },
+    {
+      category: 'Iets anders',
+      title: 'Digitale veiligheid',
+      content: 'Leer hoe u uw online bankervaring veilig houdt'
+    },
+    {
+      category: 'Iets anders',
+      title: 'Nieuws en updates',
+      content: 'Blijf op de hoogte van onze laatste ontwikkelingen'
+    },
+    {
+      category: 'Iets anders',
+      title: 'Feedback geven',
+      content: 'Deel uw mening en help ons onze diensten te verbeteren'
+    }
+  ];
+
+  // when a tile is clicked on, add the active class to it
+  tiles.forEach(tile => {
+    tile.addEventListener('click', () => {
+      tiles.forEach(t => t.classList.remove('active'));
+      tile.classList.add('active');
+
+      // remove the tile items from the DOM
+      let tileItems = document.getElementById('tile-items');
+      tileItems.innerHTML = '';
+
+      // get the tile id
+      switch (tile.id) {
+        case 'tile-1':
+          createItems(tile1Items);
+          break;
+        case 'tile-2':
+          createItems(tile2Items);
+          break;
+        case 'tile-3':
+          createItems(tile3Items);
+          break;
+        case 'tile-4':
+          createItems(tile4Items);
+          break;
+        case 'tile-5':
+          createItems(tile5Items);
+          break;
+      }      
+    });
+  });
+
+  function createItems(items) {
+    let tileItems = document.getElementById('tile-items');
+    tileItems.innerHTML = '';
+
+    items.forEach(item => {
+      let newItem = document.createElement('div');
+      newItem.classList.add('item');
+
+      let category = document.createElement('h2');
+      category.classList.add('item-category');
+      category.textContent = item.category;
+
+      let title = document.createElement('p');
+      title.classList.add('item-title');
+      title.textContent = item.title;
+
+      let content = document.createElement('p');
+      content.classList.add('item-content');
+      content.textContent = item.content;
+
+      newItem.appendChild(category);
+      newItem.appendChild(title);
+      newItem.appendChild(content);
+
+      tileItems.appendChild(newItem);
+    });
+  }
+</script>
+
+</html>
